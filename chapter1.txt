@@ -1,1 +1,48 @@
-It was tge best of times, it was the worst of times.
+Purpose: Version Control. Merge, Clone, Pull Requests, Fork and more
+
+Version Control Using Git. (local version)
+Save a version. Enables rolling back to the last good version.
+
+Using Git for Version Control using the Command Line.
+OpenTerminal. CD into Desktop cd Desktop
+Make and Name a  New Directory: mkdir  Story
+Change Directory into the New Directory: cd Story
+Create a new file: touch chapter1.txt
+Open chapter1.txt: open -a /Application/Visual\ Studio\ Code.app/ chapter1.txt
+
+Enter some text
+Create a local Git Repository: git init
+Git will be a hidden file. To see it at the command line type: ls -a
+This will track all your changes, commit all your changes, and to perform version control.
+
+ We are currently inside the Story directory, also called the Working Directory.
+
+To start tracking your file. Add it to the Staging area. Type: 
+git status
+to see whats already in it.
+Untracked files are shown in red.
+To start tracking the changes use the command:
+git add chapter1.txt (in this case)
+
+Type git status again and notice that the file is now shown in green indicating that the file is in the staging area ready to be committed and it says so too.
+Commit it using the command: git commit -m “Initial commit” (where -m means message – usually written in the present tense)
+git log shows the commits you have made. You will see the hash (uniquely identifies this particular commit) for the commit, author name Date/time and title.
+
+Create two more chapters:
+touch chapter2.txt 
+touch chapter3.txt
+
+Add some text to each of the new chapters:
+open -a /Application/Visual\ Studio\ Code.app/ chapter2.txt  Add some text
+open -a /Application/Visual\ Studio\ Code.app/ chapter3.txt Add some text
+
+See the changes in finder
+
+Before we add the two new files to the staging area check again what is untracked by typing:
+git status and we see the see the two untracked files present and that nothing added to commit.
+Add the two new files to the staging area with: git add chapter2.txt and then  git add chapter3.txt
+OR  add the two new files at the same time with the command: git add .
+On checking using: git status we see that both new files are now in the staging area. We are ready to commit both files by using: git commit -m “complete chapters 2 and 3”. Use git log to see our commits and we see that both have different hashes, and different dates and times. 
+To roll back to an earlier version we can use the git checkout command. Before doing so we can 
+use git status again to check what is in the staging area and say we have chapter3.txt staged. Check what the differences are between the already committed version and the staged version enter; diff –git a/chapter3.txt b/chapter3.txt If you want to change back to the previous version use git checkout chapter3.txt the change will be immediate. 
+Using git log to look at what was actually already committed.
